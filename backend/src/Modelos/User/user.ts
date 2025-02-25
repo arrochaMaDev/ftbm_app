@@ -7,12 +7,12 @@ export class User {
     private readonly direccion: string,
     private readonly telefono: number,
     private readonly foto: string,
+    private readonly numero_federado: number,
     private readonly email: string,
     private readonly password: string, //argon2
     private readonly fecha_registro: Date,
     private readonly es_admin: boolean,
-    private readonly tipo_usuario: number,
-    private readonly numero_federado: number,
+    // private readonly tipo_usuario: number,
     private readonly activo_musico: boolean,
     private readonly activo_directivo: boolean,
     private readonly acepta_bolsa_refuerzos: boolean,
@@ -61,39 +61,39 @@ export class User {
     return this.fecha_registro;
   }
 
-  isAdmin(): boolean {
+  getIsAdmin(): boolean {
     return this.es_admin;
   }
 
-  getTipoUsuario(): number {
-    return this.tipo_usuario;
-  }
+  // getTipoUsuario(): number {
+  //   return this.tipo_usuario;
+  // }
 
   getNumeroFederado(): number {
     return this.numero_federado;
   }
 
-  isActivoMusico(): boolean {
+  getIsActivoMusico(): boolean {
     return this.activo_musico;
   }
 
-  isActivoDirectivo(): boolean {
+  getIsActivoDirectivo(): boolean {
     return this.activo_directivo;
   }
 
-  aceptaBolsaRefuerzos(): boolean {
+  getAceptaBolsaRefuerzos(): boolean {
     return this.acepta_bolsa_refuerzos;
   }
 
-  aceptaBolsaProfesores(): boolean {
+  getAceptaBolsaProfesores(): boolean {
     return this.acepta_bolsa_profesores;
   }
 
-  aceptaBolsaBandaInsular(): boolean {
+  getAceptaBolsaBandaInsular(): boolean {
     return this.acepta_bolsa_banda_insular;
   }
 
-  aceptaComunicacionesEmail(): boolean {
+  getAceptaComunicacionesEmail(): boolean {
     return this.acepta_comunicaciones_email;
   }
 }

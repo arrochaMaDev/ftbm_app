@@ -15,6 +15,8 @@ import { ListerUsersController } from './Controllers/User/Get/listerUsers.contro
 import { ListerUsersService } from './Controllers/User/Get/listerUsers.service';
 import { GetUserController } from './Controllers/User/Get/GetUser.controller';
 import { GetUserService } from './Controllers/User/Get/getUser.service';
+import { DeleteUserController } from './Controllers/User/Delete/DeleteUser.controller';
+import { DeleteUserService } from './Controllers/User/Delete/DeleteUser.service';
 
 @Module({
   imports: [
@@ -45,7 +47,13 @@ import { GetUserService } from './Controllers/User/Get/getUser.service';
     RegisterUserController,
     ListerUsersController,
     GetUserController,
+    DeleteUserController,
   ],
-  providers: [RegisterUserService, ListerUsersService, GetUserService],
+  providers: [
+    RegisterUserService,
+    ListerUsersService,
+    GetUserService,
+    DeleteUserService,
+  ],
 })
 export class AppModule {}

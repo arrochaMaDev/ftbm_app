@@ -1,4 +1,4 @@
-import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { GetUserService } from './getUser.service';
 // import { Res } from '@nestjs/common';
 // import { Response } from 'express';
@@ -16,7 +16,7 @@ export class GetUserController {
 
       if (!user) {
         // return response.status(404).json({ message: 'Usuario no encontrado' });
-        throw new NotFoundException('Usuario no encontrado');
+        throw new Error('Usuario no encontrado');
       }
 
       // return response.status(200).json(user)
@@ -24,6 +24,7 @@ export class GetUserController {
       return user;
     } catch (error) {
       console.error(error);
+      throw new Error('Ha habido un error al intentar obtener el usuario');
 
       // return response
       //   .status(500)

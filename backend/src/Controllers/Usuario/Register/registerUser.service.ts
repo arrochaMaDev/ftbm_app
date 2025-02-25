@@ -28,7 +28,7 @@ export class RegisterUserService {
     acepta_bolsa_profesores: boolean,
     acepta_bolsa_banda_insular: boolean,
     acepta_comunicaciones_email: boolean,
-    numero_federado: number, // Opcional, hay que colocarlos al final
+    numero_federado?: number, // Opcional, hay que colocarlos al final
     fecha_registro?: Date, // Opcional, hay que colocarlos al final
   ) {
     try {

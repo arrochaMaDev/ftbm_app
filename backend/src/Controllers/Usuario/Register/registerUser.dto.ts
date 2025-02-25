@@ -51,6 +51,7 @@ export class RegisterUserDto {
   foto: any;
 
   @IsNumber()
+  @IsOptional()
   @ApiProperty({
     type: 'number',
     description: 'Número de federado en la FTBM autogenerado',

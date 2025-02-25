@@ -1,10 +1,4 @@
-import {
-  Column,
-  Entity,
-  OneToMany,
-  OneToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'banda' })
 export class BandaDB {
@@ -13,6 +7,27 @@ export class BandaDB {
 
   @Column()
   nombre: string;
+
+  @Column()
+  municipio: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  telefono: number;
+
+  @Column()
+  logo: string;
+
+  @Column()
+  director: string;
+
+  @Column()
+  informacion: string;
+
+  @Column()
+  es_activa: boolean;
 
   // FALTAN LAS RELACIONES
 }

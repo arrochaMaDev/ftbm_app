@@ -19,6 +19,8 @@ import { DeleteUserController } from './Controllers/Usuario/Delete/deleteUser.co
 import { DeleteUserService } from './Controllers/Usuario/Delete/deleteUser.service';
 import { UpdateUserController } from './Controllers/Usuario/Update/updateUser.controller';
 import { UpdateUserService } from './Controllers/Usuario/Update/updateUser.service';
+import { RegisterBandaController } from './Controllers/Banda/Register/registerBanda.controller';
+import { RegisterBandaService } from './Controllers/Banda/Register/registerBanda.service';
 
 @Module({
   imports: [
@@ -51,6 +53,7 @@ import { UpdateUserService } from './Controllers/Usuario/Update/updateUser.servi
     GetUserController,
     DeleteUserController,
     UpdateUserController,
+    RegisterBandaController,
   ],
   providers: [
     RegisterUserService,
@@ -58,6 +61,7 @@ import { UpdateUserService } from './Controllers/Usuario/Update/updateUser.servi
     GetUserService,
     DeleteUserService,
     UpdateUserService,
+    RegisterBandaService,
   ],
 })
 export class AppModule {}

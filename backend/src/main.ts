@@ -24,7 +24,6 @@ async function bootstrap() {
       'App para gestión de músicos y directivos federados de la FTBM',
     )
     .setVersion('1.0')
-    // .addTag('FTBM_app')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);

@@ -13,10 +13,12 @@ import { RegisterUserController } from './Controllers/User/Register/registerUser
 import { RegisterUserService } from './Controllers/User/Register/registerUser.service';
 import { ListerUsersController } from './Controllers/User/Get/listerUsers.controller';
 import { ListerUsersService } from './Controllers/User/Get/listerUsers.service';
-import { GetUserController } from './Controllers/User/Get/GetUser.controller';
+import { GetUserController } from './Controllers/User/Get/getUser.controller';
 import { GetUserService } from './Controllers/User/Get/getUser.service';
-import { DeleteUserController } from './Controllers/User/Delete/DeleteUser.controller';
-import { DeleteUserService } from './Controllers/User/Delete/DeleteUser.service';
+import { DeleteUserController } from './Controllers/User/Delete/deleteUser.controller';
+import { DeleteUserService } from './Controllers/User/Delete/deleteUser.service';
+import { UpdateUserController } from './Controllers/User/Update/updateUser.controller';
+import { UpdateUserService } from './Controllers/User/Update/updateUser.service';
 
 @Module({
   imports: [
@@ -48,12 +50,14 @@ import { DeleteUserService } from './Controllers/User/Delete/DeleteUser.service'
     ListerUsersController,
     GetUserController,
     DeleteUserController,
+    UpdateUserController,
   ],
   providers: [
     RegisterUserService,
     ListerUsersService,
     GetUserService,
     DeleteUserService,
+    UpdateUserService,
   ],
 })
 export class AppModule {}

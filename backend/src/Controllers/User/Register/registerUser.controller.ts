@@ -1,12 +1,21 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { RegisterUserService } from './registerUser.service';
 import { RegisterUserDto } from './registerUser.dto';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller('usuario')
+@ApiTags('User')
 export class RegisterUserController {
   constructor(private readonly registerUserService: RegisterUserService) {}
 
   @Post()
+  @ApiOperation({ summary: 'Este endpoint permite registrar un usuario' })
+  @ApiResponse({ status: 200, description: 'Usuario registrado correctamente' })
+  @ApiResponse({ status: 404, description: 'No se encontró el usuario' })
+  @ApiResponse({
+    status: 500,
+    description: 'Ha ocurrido un error en el servidor',
+  })
   async registerUser(@Body() data: RegisterUserDto) {
     try {
       const {

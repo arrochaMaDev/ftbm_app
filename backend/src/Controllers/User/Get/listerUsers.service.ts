@@ -15,6 +15,9 @@ export class ListerUsersService {
       const listado = await this.userRepository.find();
       console.log(listado);
       return listado;
-    } catch (error) {}
+    } catch (error) {
+      console.error('Error al listar los usuarios:', error);
+      throw new Error('No se pudo listar los usuarios');
+    }
   }
 }

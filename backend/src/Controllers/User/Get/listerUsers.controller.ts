@@ -7,6 +7,11 @@ export class ListerUsersController {
 
   @Get()
   async listerUsers() {
-    return this.listerUsersService.listerUsers();
+    try {
+      return this.listerUsersService.listerUsers();
+    } catch (error) {
+      console.error('Error al listar los usuarios:', error);
+      throw new Error('No se pudo listar los usuarios');
+    }
   }
 }

@@ -13,6 +13,8 @@ import { RegisterUserController } from './Controllers/User/Register/registerUser
 import { RegisterUserService } from './Controllers/User/Register/registerUser.service';
 import { ListerUsersController } from './Controllers/User/Get/listerUsers.controller';
 import { ListerUsersService } from './Controllers/User/Get/listerUsers.service';
+import { GetUserController } from './Controllers/User/Get/GetUser.controller';
+import { GetUserService } from './Controllers/User/Get/getUser.service';
 
 @Module({
   imports: [
@@ -39,7 +41,11 @@ import { ListerUsersService } from './Controllers/User/Get/listerUsers.service';
       Usuario_instrumentoDB,
     ]),
   ],
-  controllers: [RegisterUserController, ListerUsersController],
-  providers: [RegisterUserService, ListerUsersService],
+  controllers: [
+    RegisterUserController,
+    ListerUsersController,
+    GetUserController,
+  ],
+  providers: [RegisterUserService, ListerUsersService, GetUserService],
 })
 export class AppModule {}

@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import { UserDB } from '../User/userDB';
+import { UserDB } from '../Usuario/userDB';
 import { InstrumentoDB } from '../Instrumento/instrumentoDB';
 
 @Entity({ name: 'usuario_instrumento' })

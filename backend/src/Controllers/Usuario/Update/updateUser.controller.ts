@@ -1,6 +1,6 @@
 import { Body, Controller, Param, Put } from '@nestjs/common';
 import { UpdateUserService } from './updateUser.service';
-import { UserDB } from 'src/Modelos/User/userDB';
+import { UserDB } from 'src/Modelos/Usuario/userDB';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller('usuario')

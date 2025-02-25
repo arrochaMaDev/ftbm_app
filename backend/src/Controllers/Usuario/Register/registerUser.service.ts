@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UserDB } from 'src/Modelos/User/userDB';
+import { UserDB } from 'src/Modelos/Usuario/userDB';
 import { Repository } from 'typeorm';
 import * as argon2 from 'argon2';
-import { User } from 'src/Modelos/User/user';
+import { User } from 'src/Modelos/Usuario/user';
 
 @Injectable()
 export class RegisterUserService {

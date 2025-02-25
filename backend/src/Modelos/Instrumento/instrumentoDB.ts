@@ -11,9 +11,14 @@ export class InstrumentoDB {
   nombre: string;
 
   // Relación con usuario_instrumento (tabla intermedia)
+  // @OneToMany(
+  //   () => Usuario_instrumentoDB,
+  //   (usuario_instrumento: Usuario_instrumentoDB) => usuario_instrumento.id,
+  // )
+  // usuario_instrumento: Usuario_instrumentoDB[];
   @OneToMany(
     () => Usuario_instrumentoDB,
-    (usuario_instrumento: Usuario_instrumentoDB) => usuario_instrumento.id,
+    (usuario_instrumento) => usuario_instrumento.instrumento,
   )
   usuario_instrumento: Usuario_instrumentoDB[];
 }

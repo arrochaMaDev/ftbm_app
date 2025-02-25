@@ -9,7 +9,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import { UserDB } from '../User/userDB';
+import { UserDB } from '../Usuario/userDB';
 import { BandaDB } from '../Banda/bandaDB';
 
 @Entity({ name: 'usuario_banda' })

@@ -73,9 +73,14 @@ export class UserDB {
   acepta_comunicaciones_email: boolean;
 
   // Relación con usuario_instrumento (tabla intermedia)
+  // @OneToMany(
+  //   () => Usuario_instrumentoDB,
+  //   (usuario_instrumento: Usuario_instrumentoDB) => usuario_instrumento.id,
+  // )
+  // usuario_instrumento: Usuario_instrumentoDB[];
   @OneToMany(
     () => Usuario_instrumentoDB,
-    (usuario_instrumento: Usuario_instrumentoDB) => usuario_instrumento.id,
+    (usuario_instrumento) => usuario_instrumento.usuario,
   )
   usuario_instrumento: Usuario_instrumentoDB[];
 }

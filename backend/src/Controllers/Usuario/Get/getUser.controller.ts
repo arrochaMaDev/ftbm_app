@@ -9,7 +9,7 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 export class GetUserController {
   constructor(private readonly getUserService: GetUserService) {}
 
-  @Get(':id')
+  @Get(':usuario_id')
   @ApiOperation({
     summary: 'Este endpoint permite obtener a un usuario',
   })
@@ -20,7 +20,7 @@ export class GetUserController {
     description: 'Ha ocurrido un error en el servidor',
   })
   // async getUser(@Param('id') usuario_id: number, @Res() response: Response) {
-  async getUser(@Param('id') usuario_id: number) {
+  async getUser(@Param('usuario_id') usuario_id: number) {
     // Sin @Res para que NestJS maneje la respuesta automáticamente
     try {
       const user = await this.getUserService.getUser(Number(usuario_id));

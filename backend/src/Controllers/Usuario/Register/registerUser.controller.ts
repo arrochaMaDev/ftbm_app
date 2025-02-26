@@ -9,8 +9,8 @@ export class RegisterUserController {
   constructor(private readonly registerUserService: RegisterUserService) {}
 
   @Post()
-  @ApiOperation({ summary: 'Este endpoint permite registrar un usuario' })
-  @ApiResponse({ status: 200, description: 'Usuario registrado correctamente' })
+  @ApiOperation({ summary: 'Este endpoint permite crear un usuario' })
+  @ApiResponse({ status: 201, description: 'Usuario creado correctamente' })
   @ApiResponse({ status: 404, description: 'No se encontró el usuario' })
   @ApiResponse({
     status: 500,

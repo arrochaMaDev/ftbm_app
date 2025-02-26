@@ -1,4 +1,4 @@
-import { Controller, Delete, Param } from '@nestjs/common';
+import { Controller, Delete, NotFoundException, Param } from '@nestjs/common';
 import { DeleteUserService } from './deleteUser.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
@@ -7,7 +7,7 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 export class DeleteUserController {
   constructor(private readonly deleteUserService: DeleteUserService) {}
 
-  @Delete(':id')
+  @Delete(':usuario_id')
   @ApiOperation({
     summary: 'Este endpoint permite borrar a un usuario',
   })
@@ -17,17 +17,20 @@ export class DeleteUserController {
     status: 500,
     description: 'Ha ocurrido un error en el servidor',
   })
-  async getUser(@Param('id') usuario_id: number) {
+  async getUser(@Param('usuario_id') usuario_id: number) {
     try {
       const user = await this.deleteUserService.deleteUser(Number(usuario_id));
 
       if (!user) {
-        throw new Error('Usuario no encontrado');
+        throw new NotFoundException('Usuario no encontrado');
       }
 
       console.log(user);
       return { message: 'Usuario eliminado con éxito', user };
     } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw error;
+      }
       console.error(error);
       throw new Error('Ha habido un error al intentar eliminar el usuario');
     }

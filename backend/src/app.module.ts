@@ -25,6 +25,8 @@ import { ListerBandasService } from './Controllers/Banda/Get/listerBandas.servic
 import { ListerBandasController } from './Controllers/Banda/Get/listerBandas.controller';
 import { GetBandaController } from './Controllers/Banda/Get/getBanda.controller';
 import { GetBandaService } from './Controllers/Banda/Get/getBanda.service';
+import { DeleteBandaService } from './Controllers/Banda/Delete/deleteBanda.service';
+import { DeleteBandaController } from './Controllers/Banda/Delete/deleteBanda.controller';
 
 @Module({
   imports: [
@@ -60,6 +62,7 @@ import { GetBandaService } from './Controllers/Banda/Get/getBanda.service';
     RegisterBandaController,
     ListerBandasController,
     GetBandaController,
+    DeleteBandaController,
   ],
   providers: [
     RegisterUserService,
@@ -70,6 +73,7 @@ import { GetBandaService } from './Controllers/Banda/Get/getBanda.service';
     RegisterBandaService,
     ListerBandasService,
     GetBandaService,
+    DeleteBandaService,
   ],
 })
 export class AppModule {}

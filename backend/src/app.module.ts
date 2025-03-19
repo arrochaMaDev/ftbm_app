@@ -35,6 +35,10 @@ import { ListerInstrumentosController } from './Controllers/Instrumento/Get/list
 import { ListerInstrumentosService } from './Controllers/Instrumento/Get/listerInstrumentos.service';
 import { GetInstrumentoController } from './Controllers/Instrumento/Get/getInstrumento.controller';
 import { GetInstrumentoService } from './Controllers/Instrumento/Get/getInstrumento.service';
+import { DeleteInstrumentoService } from './Controllers/Instrumento/Delete/deleteInstrumento.service';
+import { DeleteInstrumentoController } from './Controllers/Instrumento/Delete/deleteInstrumento.controller';
+import { UpdateInstrumentoController } from './Controllers/Instrumento/Update/updateInstrumentoController';
+import { UpdateInstrumentoService } from './Controllers/Instrumento/Update/updateInstrumento.service';
 
 @Module({
   imports: [
@@ -75,6 +79,8 @@ import { GetInstrumentoService } from './Controllers/Instrumento/Get/getInstrume
     RegisterInstrumentoController,
     ListerInstrumentosController,
     GetInstrumentoController,
+    DeleteInstrumentoController,
+    UpdateInstrumentoController,
   ],
   providers: [
     RegisterUserService,
@@ -90,6 +96,8 @@ import { GetInstrumentoService } from './Controllers/Instrumento/Get/getInstrume
     RegisterInstrumentoService,
     ListerInstrumentosService,
     GetInstrumentoService,
+    DeleteInstrumentoService,
+    UpdateInstrumentoService,
   ],
 })
 export class AppModule {}

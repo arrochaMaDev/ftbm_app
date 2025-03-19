@@ -31,6 +31,8 @@ import { UpdateBandaService } from './Controllers/Banda/Update/updateBanda.servi
 import { UpdateBandaController } from './Controllers/Banda/Update/updateBanda.controller';
 import { RegisterInstrumentoController } from './Controllers/Instrumento/Register/registerInstrumento.controller';
 import { RegisterInstrumentoService } from './Controllers/Instrumento/Register/registerInstrumento.service';
+import { ListerInstrumentosController } from './Controllers/Instrumento/Get/listerInstrumentos.controller';
+import { ListerInstrumentosService } from './Controllers/Instrumento/Get/listerInstrumentos.service';
 
 @Module({
   imports: [
@@ -69,6 +71,7 @@ import { RegisterInstrumentoService } from './Controllers/Instrumento/Register/r
     DeleteBandaController,
     UpdateBandaController,
     RegisterInstrumentoController,
+    ListerInstrumentosController,
   ],
   providers: [
     RegisterUserService,
@@ -82,6 +85,7 @@ import { RegisterInstrumentoService } from './Controllers/Instrumento/Register/r
     DeleteBandaService,
     UpdateBandaService,
     RegisterInstrumentoService,
+    ListerInstrumentosService,
   ],
 })
 export class AppModule {}

@@ -29,5 +29,7 @@ export class BandaDB {
   @Column()
   es_activa: boolean;
 
-  // FALTAN LAS RELACIONES
+  // Relación con usuario_banda (tabla intermedia)
+  // @OneToMany(() => Usuario_bandaDB, (usuario_banda) => usuario_banda.banda)
+  // usuarioBandas: Usuario_bandaDB[];
 }

@@ -2,10 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  OneToMany,
+  // OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Usuario_instrumentoDB } from '../Usuario_instrumento/usuario_instrumentoDB';
+// import { Usuario_bandaDB } from '../Usuario_banda/usuario_bandaDB';
+// import { Usuario_instrumentoDB } from '../Usuario_instrumento/usuario_instrumentoDB';
 
 // export enum TipoUsuario {
 //   MUSICO = 'musico',
@@ -78,9 +79,14 @@ export class UserDB {
   //   (usuario_instrumento: Usuario_instrumentoDB) => usuario_instrumento.id,
   // )
   // usuario_instrumento: Usuario_instrumentoDB[];
-  @OneToMany(
-    () => Usuario_instrumentoDB,
-    (usuario_instrumento) => usuario_instrumento.usuario,
-  )
-  usuario_instrumento: Usuario_instrumentoDB[];
+
+  // @OneToMany(
+  //   () => Usuario_instrumentoDB,
+  //   (usuario_instrumento) => usuario_instrumento.usuario,
+  // )
+  // usuario_instrumento: Usuario_instrumentoDB[];
+
+  // Relación con usuario_banda (tabla intermedia)
+  // @OneToMany(() => Usuario_bandaDB, (usuario_banda) => usuario_banda.usuario)
+  // usuarioBandas: Usuario_bandaDB[];
 }

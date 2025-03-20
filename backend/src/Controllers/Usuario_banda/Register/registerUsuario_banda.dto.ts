@@ -1,14 +1,23 @@
-import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { Type } from 'class-transformer';
+import { IsBoolean, IsNotEmpty, IsNumber } from 'class-validator';
 
-export class RegisterUserDto {
+export class RegisterUsuario_bandaDto {
   @IsNumber()
   @IsNotEmpty()
   usuario_id: number;
 
   @IsNumber()
   @IsNotEmpty()
-  instrumento_id: number;
+  banda_id: number;
 
-  @IsString()
-  descripcion: string;
+  @Type(() => Date)
+  fecha_alta: Date;
+
+  @IsBoolean()
+  @IsNotEmpty()
+  es_musico: boolean;
+
+  @IsBoolean()
+  @IsNotEmpty()
+  es_directivo: boolean;
 }

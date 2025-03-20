@@ -1,6 +1,11 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  // OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
-import { Usuario_instrumentoDB } from '../Usuario_instrumento/usuario_instrumentoDB';
+// import { Usuario_instrumentoDB } from '../Usuario_instrumento/usuario_instrumentoDB';
 
 @Entity({ name: 'instrumento' })
 export class InstrumentoDB {
@@ -16,9 +21,9 @@ export class InstrumentoDB {
   //   (usuario_instrumento: Usuario_instrumentoDB) => usuario_instrumento.id,
   // )
   // usuario_instrumento: Usuario_instrumentoDB[];
-  @OneToMany(
-    () => Usuario_instrumentoDB,
-    (usuario_instrumento) => usuario_instrumento.instrumento,
-  )
-  usuario_instrumento: Usuario_instrumentoDB[];
+  // @OneToMany(
+  //   () => Usuario_instrumentoDB,
+  //   (usuario_instrumento) => usuario_instrumento.instrumento,
+  // )
+  // usuario_instrumento: Usuario_instrumentoDB[];
 }

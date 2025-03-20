@@ -15,15 +15,12 @@ export class Usuario_instrumentoDB {
   id: number;
 
   // Relación con Usuario
-  @ManyToOne(() => UserDB, (usuario) => usuario.usuario_instrumento)
+  @ManyToOne(() => UserDB, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'usuario_id' })
   usuario: UserDB;
 
   // Relación con Instrumento
-  @ManyToOne(
-    () => InstrumentoDB,
-    (instrumento) => instrumento.usuario_instrumento,
-  )
+  @ManyToOne(() => InstrumentoDB, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'instrumento_id' })
   instrumento: InstrumentoDB;
 

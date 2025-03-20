@@ -1,7 +1,7 @@
 import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
 import { GetUsuario_bandaService } from './getUsuario_banda.service';
 
-@Controller()
+@Controller('usuario_banda')
 export class GetUsuario_BandaController {
   constructor(
     private readonly getUsuario_BandaService: GetUsuario_bandaService,

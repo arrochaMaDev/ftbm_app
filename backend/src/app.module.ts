@@ -41,6 +41,10 @@ import { UpdateInstrumentoController } from './Controllers/Instrumento/Update/up
 import { UpdateInstrumentoService } from './Controllers/Instrumento/Update/updateInstrumento.service';
 import { RegisterUsuario_bandaController } from './Controllers/Usuario_banda/Register/registerUsuario_banda.controller';
 import { RegisterUsuarioBandaService } from './Controllers/Usuario_banda/Register/registerUsuario_banda.service';
+import { ListerUsuarioBandaController } from './Controllers/Usuario_banda/Get/listerUsuarios_bandas.controller';
+import { ListerUsuarioBandaService } from './Controllers/Usuario_banda/Get/listerUsuarios_bandas.service';
+import { GetUsuario_BandaController } from './Controllers/Usuario_banda/Get/getUsuario_banda.controller';
+import { GetUsuario_bandaService } from './Controllers/Usuario_banda/Get/getUsuario_banda.service';
 
 @Module({
   imports: [
@@ -84,6 +88,8 @@ import { RegisterUsuarioBandaService } from './Controllers/Usuario_banda/Registe
     DeleteInstrumentoController,
     UpdateInstrumentoController,
     RegisterUsuario_bandaController,
+    ListerUsuarioBandaController,
+    GetUsuario_BandaController,
   ],
   providers: [
     RegisterUserService,
@@ -102,6 +108,8 @@ import { RegisterUsuarioBandaService } from './Controllers/Usuario_banda/Registe
     DeleteInstrumentoService,
     UpdateInstrumentoService,
     RegisterUsuarioBandaService,
+    ListerUsuarioBandaService,
+    GetUsuario_bandaService,
   ],
 })
 export class AppModule {}

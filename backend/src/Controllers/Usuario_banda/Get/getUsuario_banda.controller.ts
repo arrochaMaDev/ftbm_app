@@ -35,6 +35,9 @@ export class GetUsuario_BandaController {
       // return usuario_bandaDTO;
       return usuario_banda;
     } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw error;
+      }
       console.error(error);
       throw new Error('No se pudo obtener el Usuario_banda');
     }

@@ -33,6 +33,11 @@ export class RegisterUserDto {
   @ApiProperty({ type: 'string', description: 'DNI del usuario' })
   dni: string;
 
+  @Type(() => Date)
+  @IsNotEmpty()
+  @ApiProperty({ type: 'date', description: 'Fecha de nacimiento del usuario' })
+  fecha_nacimiento: Date;
+
   @IsString()
   @IsNotEmpty()
   @ApiProperty({ type: 'string', description: 'Dirección del usuario' })
@@ -43,7 +48,7 @@ export class RegisterUserDto {
   @IsNotEmpty() // validado para que sea un número de 9 dígitos (entre 100000000 y 999999999) y en formato 123456789
   @Min(100000000)
   @Max(999999999)
-  @ApiProperty({ type: 'number', description: 'Número de usuario en la FTBM' })
+  @ApiProperty({ type: 'number', description: 'Número de teléfono' })
   telefono: number;
 
   @IsOptional()

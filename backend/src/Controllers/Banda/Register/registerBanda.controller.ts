@@ -11,6 +11,7 @@ export class RegisterBandaController {
     try {
       const {
         nombre,
+        cif,
         municipio,
         email,
         telefono,
@@ -22,6 +23,7 @@ export class RegisterBandaController {
 
       const bandaData = await this.registerBandaService.createBanda(
         nombre,
+        cif,
         municipio,
         email,
         telefono,
@@ -34,6 +36,7 @@ export class RegisterBandaController {
       const banda = {
         id: bandaData.banda_id,
         nombre: bandaData.nombre,
+        cif: bandaData.cif,
         municipio: bandaData.municipio,
         email: bandaData.email,
         telefono: bandaData.telefono,

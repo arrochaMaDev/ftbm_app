@@ -2,6 +2,7 @@ export class Banda {
   constructor(
     private readonly banda_id: number,
     private readonly nombre: string,
+    private readonly cif: string,
     private readonly municipio: string,
     private readonly email: string,
     private readonly telefono: number,
@@ -17,6 +18,10 @@ export class Banda {
 
   getNombre(): string {
     return this.nombre;
+  }
+
+  getCif(): string {
+    return this.cif;
   }
 
   getMunicipio(): string {

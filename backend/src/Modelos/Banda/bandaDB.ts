@@ -9,6 +9,9 @@ export class BandaDB {
   nombre: string;
 
   @Column()
+  cif: string;
+
+  @Column()
   municipio: string;
 
   @Column()

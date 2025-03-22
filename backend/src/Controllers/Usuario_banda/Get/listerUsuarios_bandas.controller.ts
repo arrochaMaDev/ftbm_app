@@ -1,10 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
-import { ListerUsuarioBandaService } from './listerUsuarios_bandas.service';
+import { ListerUsuariosBandasService } from './listerUsuarios_bandas.service';
 
 @Controller('usuarios_bandas')
-export class ListerUsuarioBandaController {
+export class ListerUsuariosBandasController {
   constructor(
-    private readonly listerUsuarioBandaService: ListerUsuarioBandaService,
+    private readonly listerUsuarioBandaService: ListerUsuariosBandasService,
   ) {}
 
   @Get()

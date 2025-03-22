@@ -4,6 +4,7 @@ export class User {
     private readonly nombre: string,
     private readonly apellidos: string,
     private readonly dni: string,
+    private readonly fecha_nacimiento: Date,
     private readonly direccion: string,
     private readonly telefono: number,
     private readonly foto: string,
@@ -12,7 +13,6 @@ export class User {
     private readonly password: string, //argon2
     private readonly fecha_registro: Date,
     private readonly es_admin: boolean,
-    // private readonly tipo_usuario: number,
     private readonly activo_musico: boolean,
     private readonly activo_directivo: boolean,
     private readonly acepta_bolsa_refuerzos: boolean,
@@ -35,6 +35,10 @@ export class User {
 
   getDni(): string {
     return this.dni;
+  }
+
+  getFechaNacimiento(): Date {
+    return this.fecha_nacimiento;
   }
 
   getDireccion(): string {

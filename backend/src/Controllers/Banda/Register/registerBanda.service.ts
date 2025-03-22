@@ -13,6 +13,7 @@ export class RegisterBandaService {
 
   async createBanda(
     nombre: string,
+    cif: string,
     municipio: string,
     email: string,
     telefono: number,
@@ -25,6 +26,7 @@ export class RegisterBandaService {
       const banda = new Banda(
         0,
         nombre,
+        cif,
         municipio,
         email,
         telefono,
@@ -37,6 +39,7 @@ export class RegisterBandaService {
       const bandaDB: Partial<BandaDB> = {
         banda_id: banda.getBanda_id(),
         nombre: banda.getNombre(),
+        cif: banda.getCif(),
         municipio: banda.getMunicipio(),
         email: banda.getEmail(),
         telefono: banda.getTelefono(),

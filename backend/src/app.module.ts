@@ -41,10 +41,14 @@ import { UpdateInstrumentoController } from './Controllers/Instrumento/Update/up
 import { UpdateInstrumentoService } from './Controllers/Instrumento/Update/updateInstrumento.service';
 import { RegisterUsuario_bandaController } from './Controllers/Usuario_banda/Register/registerUsuario_banda.controller';
 import { RegisterUsuarioBandaService } from './Controllers/Usuario_banda/Register/registerUsuario_banda.service';
-import { ListerUsuarioBandaController } from './Controllers/Usuario_banda/Get/listerUsuarios_bandas.controller';
-import { ListerUsuarioBandaService } from './Controllers/Usuario_banda/Get/listerUsuarios_bandas.service';
+import { ListerUsuariosBandasController } from './Controllers/Usuario_banda/Get/listerUsuarios_bandas.controller';
+import { ListerUsuariosBandasService } from './Controllers/Usuario_banda/Get/listerUsuarios_bandas.service';
 import { GetUsuario_BandaController } from './Controllers/Usuario_banda/Get/getUsuario_banda.controller';
 import { GetUsuario_bandaService } from './Controllers/Usuario_banda/Get/getUsuario_banda.service';
+import { ListerBandasByUserIdService } from './Controllers/Usuario_banda/Get/listerBandasByUserId.service';
+import { ListerBandasByUserIdController } from './Controllers/Usuario_banda/Get/listerBandasByUserId.controller';
+import { ListerUsersByBandasIdController } from './Controllers/Usuario_banda/Get/listerUsersByBandasId.controller';
+import { ListerUsersByBandasIdService } from './Controllers/Usuario_banda/Get/listerUsersByBandasId.service';
 
 @Module({
   imports: [
@@ -88,8 +92,10 @@ import { GetUsuario_bandaService } from './Controllers/Usuario_banda/Get/getUsua
     DeleteInstrumentoController,
     UpdateInstrumentoController,
     RegisterUsuario_bandaController,
-    ListerUsuarioBandaController,
+    ListerUsuariosBandasController,
     GetUsuario_BandaController,
+    ListerBandasByUserIdController,
+    ListerUsersByBandasIdController,
   ],
   providers: [
     RegisterUserService,
@@ -108,8 +114,10 @@ import { GetUsuario_bandaService } from './Controllers/Usuario_banda/Get/getUsua
     DeleteInstrumentoService,
     UpdateInstrumentoService,
     RegisterUsuarioBandaService,
-    ListerUsuarioBandaService,
+    ListerUsuariosBandasService,
     GetUsuario_bandaService,
+    ListerBandasByUserIdService,
+    ListerUsersByBandasIdService,
   ],
 })
 export class AppModule {}

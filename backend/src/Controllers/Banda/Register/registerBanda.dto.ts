@@ -6,6 +6,7 @@ import {
   IsNumber,
   IsOptional,
   IsString,
+  Matches,
   Max,
   Min,
 } from 'class-validator';
@@ -14,6 +15,17 @@ export class RegisterBandaDto {
   @IsString()
   @IsNotEmpty()
   nombre: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @Matches(/^[A-HJNP-SUVW]{1}\d{7}$/, {
+    message:
+      'El CIF debe tener el formato G38300802 (una letra seguida de 7 dígitos)',
+  })
+  cif: string;
+  // [A-HJNP-SUVW]{1} → La primera letra debe estar entre A-H, J, N-P, S-U, V, W (las letras permitidas en un CIF).
+  // \d{7} → Debe contener exactamente 7 dígitos numéricos después de la letra.
+  // ^ y $ → Se aseguran de que no haya caracteres adicionales antes o después del CIF.
 
   @IsString()
   @IsNotEmpty()

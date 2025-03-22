@@ -28,6 +28,9 @@ export class UserDB {
   @Column()
   dni: string;
 
+  @CreateDateColumn({ type: 'date' })
+  fecha_nacimiento: Date;
+
   @Column()
   direccion: string;
 

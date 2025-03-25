@@ -1,4 +1,10 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  ConflictException,
+  Controller,
+  Post,
+} from '@nestjs/common';
 import { RegisterUserService } from './registerUser.service';
 import { RegisterUserDto } from './registerUser.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
@@ -84,6 +90,9 @@ export class RegisterUserController {
       return user;
     } catch (error) {
       console.error('Error al crear el usuario', error);
+      if (error instanceof ConflictException) {
+        throw new BadRequestException(error.message);
+      }
       throw new Error('No se pudo crear el usuario');
     }
   }

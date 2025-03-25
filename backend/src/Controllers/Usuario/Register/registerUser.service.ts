@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserDB } from 'src/Modelos/Usuario/userDB';
 import { Repository } from 'typeorm';
@@ -86,6 +86,10 @@ export class RegisterUserService {
       return userDB;
     } catch (error) {
       console.error('Error al crear el usuario:', error);
+      if (error.code === '23505') {
+        // Código de error de PostgreSQL para UNIQUE violation
+        throw new ConflictException('El DNI ya está registrado.');
+      }
       throw new Error('No se pudo crear el usuario');
     }
   }

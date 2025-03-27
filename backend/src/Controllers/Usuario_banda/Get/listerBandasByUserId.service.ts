@@ -17,6 +17,11 @@ export class ListerBandasByUserIdService {
       relations: ['usuario', 'banda'],
     });
 
+    if (!listado || listado.length === 0) {
+      throw new Error('No se encontraron bandas para el usuario');
+    }
+    console.log(listado);
+
     return listado;
   }
 }

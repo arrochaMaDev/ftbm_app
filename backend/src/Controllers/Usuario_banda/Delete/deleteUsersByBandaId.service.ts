@@ -4,23 +4,27 @@ import { Usuario_bandaDB } from 'src/Modelos/Usuario_banda/usuario_bandaDB';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class ListerUsersByBandasIdService {
+export class DeleteUsersByBandaIdService {
   constructor(
     @InjectRepository(Usuario_bandaDB)
     private readonly usuario_bandaRepository: Repository<Usuario_bandaDB>,
   ) {}
-  async listerUsersByBandasId(id: number): Promise<Usuario_bandaDB[]> {
-    const listado = await this.usuario_bandaRepository.find({
+
+  async deleteUsersByBandaId(bandaId: number): Promise<Usuario_bandaDB[]> {
+    const users_banda = await this.usuario_bandaRepository.find({
       where: {
-        banda: { banda_id: id },
+        banda: {
+          banda_id: bandaId,
+        },
       },
       relations: ['usuario', 'banda'],
     });
-    if (!listado || listado.length === 0) {
+
+    if (!users_banda || users_banda.length === 0) {
       throw new Error('No se encontraron usuarios para la banda');
     }
-    console.log(listado);
+    console.log(users_banda);
 
-    return listado;
+    return await this.usuario_bandaRepository.remove(users_banda);
   }
 }

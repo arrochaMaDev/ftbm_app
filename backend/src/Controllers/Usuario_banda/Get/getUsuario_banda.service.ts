@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Usuario_bandaDB } from 'src/Modelos/Usuario_banda/usuario_bandaDB';
 import { Repository } from 'typeorm';
@@ -16,6 +16,9 @@ export class GetUsuario_bandaService {
       },
       relations: ['usuario', 'banda'],
     });
+    if (!usuario_banda) {
+      throw new NotFoundException('Usuario_banda no encontrado');
+    }
 
     return usuario_banda || null;
   }

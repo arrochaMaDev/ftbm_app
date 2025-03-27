@@ -12,7 +12,7 @@ export class DeleteUsersByBandaIdController {
       const users_banda =
         await this.deleteUsersByBandaIdService.deleteUsersByBandaId(bandaId);
       if (!users_banda || users_banda.length === 0) {
-        throw new Error('No se encontraron usuarios para la banda');
+        throw new NotFoundException('No se encontraron usuarios para la banda');
       }
       console.log(users_banda);
       return { message: 'Usuarios eliminados con éxito', users_banda };

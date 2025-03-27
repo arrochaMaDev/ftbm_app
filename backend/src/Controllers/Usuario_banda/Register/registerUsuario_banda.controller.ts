@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
 import { RegisterUsuarioBandaService } from './registerUsuario_banda.service';
 import { RegisterUsuario_bandaDto } from './registerUsuario_banda.dto';
 
@@ -16,6 +16,10 @@ export class RegisterUsuario_bandaController {
 
       return usuarioBandaData;
     } catch (error) {
+      if (error instanceof BadRequestException) {
+        console.error('El usuario ya está en 2 bandas');
+        throw new BadRequestException('El usuario ya está en 2 bandas');
+      }
       console.error('Error al crear el usuario en la banda:', error);
       throw new Error('No se pudo crear el usuario en la banda');
     }

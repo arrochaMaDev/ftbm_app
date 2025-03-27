@@ -9,7 +9,7 @@ export class ListerUsuariosBandasService {
     @InjectRepository(Usuario_bandaDB)
     private readonly usuarioBandaRepository: Repository<Usuario_bandaDB>,
   ) {}
-  async listerUsuarioBanda() {
+  async listerUsuariosBandas(): Promise<Usuario_bandaDB[]> {
     const listado = await this.usuarioBandaRepository.find({
       relations: ['usuario', 'banda'],
     });

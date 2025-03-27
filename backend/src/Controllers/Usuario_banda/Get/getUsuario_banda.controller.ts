@@ -32,8 +32,18 @@ export class GetUsuario_BandaController {
       //   es_directivo: usuario_banda.es_directivo,
       // };
 
-      // return usuario_bandaDTO;
-      return usuario_banda;
+      const usuario_bandaDTO = (() => {
+        const { usuario, banda, ...resto } = usuario_banda;
+        return {
+          id: usuario_banda.id,
+          usuario: { ...usuario },
+          banda: { ...banda },
+          ...resto,
+        };
+      })();
+
+      return usuario_bandaDTO;
+      // return usuario_banda;
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;

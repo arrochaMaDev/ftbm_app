@@ -15,7 +15,30 @@ export class DeleteUsuario_BandaController {
       if (!usuario_banda) {
         throw new NotFoundException('Usuario_banda no encontrado');
       }
-      return { message: 'Usuario_banda eliminado con éxito', usuario_banda };
+      // const usuario_bandaDTO = {
+      //   usuario: {
+      //     nombre: usuario_banda.usuario.nombre,
+      //     apellidos: usuario_banda.usuario.apellidos,
+      //     dni: usuario_banda.usuario.dni,
+      //     numero_federado: usuario_banda.usuario.numero_federado,
+      //   },
+      //   banda: {
+      //     nombre: usuario_banda.banda.nombre,
+      //     cif: usuario_banda.banda.cif,
+      //     municipio: usuario_banda.banda.municipio,
+      //   },
+      // };
+
+      const usuario_bandaDTO = (() => {
+        const { usuario, banda, ...resto } = usuario_banda;
+        return {
+          usuario: { ...usuario },
+          banda: { ...banda },
+          ...resto,
+        };
+      })();
+
+      return { message: 'Usuario_banda eliminado con éxito', usuario_bandaDTO };
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;

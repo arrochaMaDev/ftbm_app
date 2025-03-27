@@ -49,6 +49,14 @@ import { ListerBandasByUserIdService } from './Controllers/Usuario_banda/Get/lis
 import { ListerBandasByUserIdController } from './Controllers/Usuario_banda/Get/listerBandasByUserId.controller';
 import { ListerUsersByBandasIdController } from './Controllers/Usuario_banda/Get/listerUsersByBandasId.controller';
 import { ListerUsersByBandasIdService } from './Controllers/Usuario_banda/Get/listerUsersByBandasId.service';
+import { DeleteUsuario_BandaController } from './Controllers/Usuario_banda/Delete/deleteUsuario_banda.controller';
+import { DeleteUsuario_bandaService } from './Controllers/Usuario_banda/Delete/deleteUsuario_banda.service';
+import { DeleteBandasByUserIdController } from './Controllers/Usuario_banda/Delete/deleteBandasByUserId.controller';
+import { DeleteUsersByBandaIdController } from './Controllers/Usuario_banda/Delete/deleteUsersByBandaId.controller';
+import { UpdateUsuarioBandaController } from './Controllers/Usuario_banda/Update/updateUsuario_banda.controller';
+import { DeleteBandasByUserIdService } from './Controllers/Usuario_banda/Delete/deleteBandasByUserId.service';
+import { DeleteUsersByBandaIdService } from './Controllers/Usuario_banda/Delete/deleteUsersByBandaId.service';
+import { UpdateUsuario_bandaService } from './Controllers/Usuario_banda/Update/updateUsuario_banda.service';
 
 @Module({
   imports: [
@@ -107,6 +115,10 @@ import { ListerUsersByBandasIdService } from './Controllers/Usuario_banda/Get/li
     GetUsuario_BandaController,
     ListerBandasByUserIdController,
     ListerUsersByBandasIdController,
+    DeleteUsuario_BandaController,
+    DeleteBandasByUserIdController,
+    DeleteUsersByBandaIdController,
+    UpdateUsuarioBandaController,
   ],
   providers: [
     RegisterUserService,
@@ -129,6 +141,10 @@ import { ListerUsersByBandasIdService } from './Controllers/Usuario_banda/Get/li
     GetUsuario_bandaService,
     ListerBandasByUserIdService,
     ListerUsersByBandasIdService,
+    DeleteUsuario_bandaService,
+    DeleteBandasByUserIdService,
+    DeleteUsersByBandaIdService,
+    UpdateUsuario_bandaService,
   ],
 })
 export class AppModule {}

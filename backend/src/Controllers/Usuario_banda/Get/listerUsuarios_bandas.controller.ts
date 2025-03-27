@@ -8,10 +8,10 @@ export class ListerUsuariosBandasController {
   ) {}
 
   @Get()
-  async listerUsuarioBanda() {
+  async listerUsuariosBandas() {
     try {
       const usuarios_bandas =
-        await this.listerUsuarioBandaService.listerUsuarioBanda();
+        await this.listerUsuarioBandaService.listerUsuariosBandas();
 
       // Filtrar los datos antes de devolverlos
       // const usuarios_bandasDTO = usuarios_bandas.map((usuarioBanda) => ({

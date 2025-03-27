@@ -59,6 +59,10 @@ export class RegisterUsuarioBandaService {
       await this.usuarioBandaRepository.insert(usuarioBandaDB);
       return usuarioBandaDB;
     } catch (error) {
+      if (error instanceof BadRequestException) {
+        console.error('El usuario ya está en 2 bandas');
+        throw new BadRequestException('El usuario ya está en 2 bandas');
+      }
       console.error('Error al crear el usuario en la banda:', error);
       throw new Error('No se pudo crear el usuario en la banda');
     }

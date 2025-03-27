@@ -2,7 +2,7 @@ import { Controller, Get, NotFoundException, Param } from '@nestjs/common';
 import { ListerBandasByUserIdService } from './listerBandasByUserId.service';
 import { GetUserService } from 'src/Controllers/Usuario/Get/getUser.service';
 
-@Controller('usuarios_bandas')
+@Controller('usuario_banda')
 export class ListerBandasByUserIdController {
   constructor(
     private readonly listerBandasByUserIdUserIdService: ListerBandasByUserIdService,
@@ -27,22 +27,24 @@ export class ListerBandasByUserIdController {
       // return bandas;
 
       // CONTROLAR LOS DATOS MEDIANTE UN DTO
-      const bandasByUserIdDTO = {
-        usuario: user,
-        bandas: bandas.map(({ id, banda }) => ({
-          id,
-          nombre: banda.nombre,
-          cif: banda.cif,
-          municipio: banda.municipio,
-          email: banda.email,
-          telefono: banda.telefono,
-          logo: banda.logo,
-          director: banda.director,
-          informacion: banda.informacion,
-          es_activa: banda.es_activa,
-        })),
-      };
-      return bandasByUserIdDTO;
+      // const bandasByUserIdDTO = {
+      //   usuario: user,
+      //   bandas: bandas.map(({ id, banda }) => ({
+      //     id,
+      //     nombre: banda.nombre,
+      //     cif: banda.cif,
+      //     municipio: banda.municipio,
+      //     email: banda.email,
+      //     telefono: banda.telefono,
+      //     logo: banda.logo,
+      //     director: banda.director,
+      //     informacion: banda.informacion,
+      //     es_activa: banda.es_activa,
+      //   })),
+      // };
+
+      return bandas;
+      // return bandasByUserIdDTO;
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;

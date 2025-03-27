@@ -10,7 +10,7 @@ import { BandaDB } from 'src/Modelos/Banda/bandaDB';
 import { UserDB } from 'src/Modelos/Usuario/userDB';
 
 @Controller('usuario_banda')
-export class UpdateUsuariobandaController {
+export class UpdateUsuarioBandaController {
   constructor(
     private readonly updateUsuario_bandaService: UpdateUsuario_bandaService,
   ) {}

@@ -29,8 +29,20 @@ export class Usuario_bandaDB {
   fecha_alta: Date;
 
   @Column()
+  año_federado: number; //se guarda solo el año durante los primeros años de la aplicación. Luego se omite esta columna en la actualización
+
+  @Column()
   es_musico: boolean;
 
   @Column()
   es_directivo: boolean;
+
+  @Column()
+  es_director: boolean;
+
+  @Column()
+  es_profesor: boolean;
+
+  @Column()
+  certificado_profesor: string;
 }

@@ -28,8 +28,26 @@ export class UserDB {
   @Column()
   dni: string;
 
+  @Column()
+  foto_dni: string;
+
   @CreateDateColumn({ type: 'date' })
   fecha_nacimiento: Date;
+
+  @Column()
+  nombre_tutor: string;
+
+  @Column()
+  apellidos_tutor: string;
+
+  @Column()
+  parentesco: string;
+
+  @Column()
+  dni_tutor: string;
+
+  @Column()
+  foto_dni_tutor: string;
 
   @Column()
   direccion: string;
@@ -59,19 +77,25 @@ export class UserDB {
   // tipo_usuario: TipoUsuario;
 
   @Column()
-  activo_musico: boolean;
+  es_activo: boolean;
 
-  @Column()
-  activo_directivo: boolean;
+  // @Column()
+  // activo_musico: boolean;
 
-  @Column()
-  acepta_bolsa_refuerzos: boolean;
+  // @Column()
+  // activo_directivo: boolean;
 
-  @Column()
-  acepta_bolsa_profesores: boolean;
+  // @Column()
+  // acepta_bolsa_refuerzos: boolean;
+  //TODO TRASLADAR A USUARIO_INSTRUMENTO
 
-  @Column()
-  acepta_bolsa_banda_insular: boolean;
+  // @Column()
+  // acepta_bolsa_profesores: boolean;
+  //TODO TRASLADAR A USUARIO_INSTRUMENTO
+
+  // @Column()
+  // acepta_bolsa_banda_insular: boolean;
+  //TODO TRASLADAR A USUARIO_INSTRUMENTO
 
   @Column()
   acepta_comunicaciones_email: boolean;
